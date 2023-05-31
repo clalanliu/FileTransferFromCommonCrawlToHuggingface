@@ -1,0 +1,3 @@
+retrying
+huggingface_hub
+tqdm
