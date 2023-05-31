@@ -6,8 +6,8 @@ key_id=$(sed '2q;d' key.txt)
 access_key=$(sed '3q;d' key.txt)
 echo "$huggingface_token\n$key_id\n$access_key"
 
-echo -e "$huggingface_token\nn" | huggingface-cli login 
-echo -e "$key_id\n$access_key\n\n\n\n" | aws configure
+huggingface-cli login < "$huggingface_token\nn" 
+aws configure < "$key_id\n$access_key\n" 
 
 directory="wets/wet_path/$SNAPSHOT"
 
