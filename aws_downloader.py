@@ -9,7 +9,8 @@ def fetch_wet_s3(wet_path, save_path, log_filename="log"):
     command = f"cp "
     src = f"s3://commoncrawl/{wet_path}"
     dst = save_path
-    argments = "--no-verify-ssl --cli-connect-timeout 6000"
+    # argments = "--no-verify-ssl --cli-connect-timeout 6000"
+    argments = " --cli-connect-timeout 6000"
     command = f"{aws} {command} {src} {dst} {argments}"
     command += f" > {log_filename}"
 

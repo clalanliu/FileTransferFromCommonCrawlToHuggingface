@@ -11,7 +11,7 @@ logger = logging.Logger(__name__)
 # @retry(wait_exponential_multiplier=250, wait_exponential_max=32000)
 def upload_to_huggingface(repo_id, file_path):
     try:
-        create_repo(f"repo_id", repo_type="dataset", private=True)
+        create_repo(repo_id, repo_type="dataset", private=True)
     except:
         logger.info(f"{repo_id} exists!")
     api = HfApi()

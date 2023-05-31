@@ -15,7 +15,7 @@ parser.add_argument("--repo_id", "-r", type=str, default="MediaTek-Research")
 args = parser.parse_args()
 
 SNAPSHOT = args.snapshot
-repo_id = os.path.join(args.repo_id, SNAPSHOT)
+repo_id = os.path.join(args.repo_id, f"cc{SNAPSHOT}")
 p = Pool(args.pool)
 
 

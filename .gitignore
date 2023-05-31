@@ -1,2 +1,5 @@
 key
 .vscode*
+*pycache*
+wets*
+key.txt
