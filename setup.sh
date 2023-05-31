@@ -1,13 +1,13 @@
 SNAPSHOT=$1
 pip install -r requirements.txt
 
-huggingface_token=$(sed '1q;d' key.txt)
-key_id=$(sed '2q;d' key.txt)
-access_key=$(sed '3q;d' key.txt)
-echo "$huggingface_token\n$key_id\n$access_key"
-
-huggingface-cli login < "$huggingface_token\nn" 
-aws configure < "$key_id\n$access_key\n" 
+#huggingface_token=$(sed '1q;d' key.txt)
+#key_id=$(sed '2q;d' key.txt)
+#access_key=$(sed '3q;d' key.txt)
+#echo "$huggingface_token\n$key_id\n$access_key"
+#
+#echo -e "$huggingface_token\n n" | huggingface-cli login 
+#echo -e "$key_id\n$access_key\n\n\n\n" 
 
 directory="wets/wet_path/$SNAPSHOT"
 
