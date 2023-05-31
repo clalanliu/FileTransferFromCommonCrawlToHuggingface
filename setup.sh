@@ -1,8 +1,9 @@
 SNAPSHOT=$1
-# Read the first three lines from key.txt
-read -r huggingface_token
-read -r key_id
-read -r access_key <"key.txt"
+pip install -r requirements.txt
+
+huggingface_token=$(sed '1q;d' key.txt)
+key_id=$(sed '2q;d' key.txt)
+access_key=$(sed '3q;d' key.txt)
 echo "$huggingface_token\n$key_id\n$access_key"
 
 echo -e "$huggingface_token\nn" | huggingface-cli login 
