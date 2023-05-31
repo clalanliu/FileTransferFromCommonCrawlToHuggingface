@@ -9,7 +9,7 @@ logger = logging.Logger(__name__)
 def is_file_on_huggingface(repo_id, file_path):
     files_info = []
     try:
-        files_info = list(list_files_info(repo_id, [path], repo_type="dataset"))
+        files_info = list(list_files_info(repo_id, [file_path], repo_type="dataset"))
         # r = requests.get("https://huggingface.co/datasets/{repo_id}/blob/main/{path}")
     except:
         pass
