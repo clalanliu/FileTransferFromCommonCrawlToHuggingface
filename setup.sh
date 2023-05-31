@@ -1,6 +1,6 @@
 SNAPSHOT=$1
 pip install -r requirements.txt
-
+pip3 install -r requirements.txt
 #huggingface_token=$(sed '1q;d' key.txt)
 #key_id=$(sed '2q;d' key.txt)
 #access_key=$(sed '3q;d' key.txt)

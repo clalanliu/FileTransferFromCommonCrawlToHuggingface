@@ -9,10 +9,11 @@ logger = logging.Logger(__name__)
 def is_file_on_huggingface(repo_id, file_path):
     files_info = []
     try:
-        files_info = list(list_files_info(repo_id, [file_path], repo_type="dataset"))
+        files_info = list(list_files_info(
+            repo_id, [file_path], repo_type="dataset"))
         # r = requests.get("https://huggingface.co/datasets/{repo_id}/blob/main/{path}")
     except:
-        pass
+        return False
     if len(files_info) > 0:
         # logger.info(f"File {files_info} exists in {repo_id}")
         print(f"File {files_info} exists in {repo_id}")
@@ -30,7 +31,7 @@ def get_start_idx(repo_id, paths):
     right = len(paths) - 1
     while left <= right:
         mid = (left + right) // 2
-        if not is_file_on_huggingface(repo_id, paths):
+        if not is_file_on_huggingface(repo_id, paths[mid]):
             right = mid - 1
         else:
             left = mid + 1
@@ -39,7 +40,8 @@ def get_start_idx(repo_id, paths):
 
 if __name__ == "__main__":
     logging.basicConfig(level=logging.DEBUG)
-    is_file_on_huggingface(repo_id="MediaTek-Research/test", file_path=".gitattributes")
+    is_file_on_huggingface(
+        repo_id="MediaTek-Research/test", file_path=".gitattributes")
     is_file_on_huggingface(
         repo_id="MediaTek-Research/test", file_path="requirements.txt"
     )

@@ -5,7 +5,7 @@ import time
 
 @retry(wait_exponential_multiplier=250, wait_exponential_max=32000)
 def fetch_wet_s3(wet_path, save_path, log_filename="log"):
-    aws = "aws $3"
+    aws = "aws s3"
     command = f"cp "
     src = f"s3://commoncrawl/{wet_path}"
     dst = save_path

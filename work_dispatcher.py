@@ -9,7 +9,7 @@ from huggingface_uploader import upload_to_huggingface
 from file_checker import is_file_downloaded, is_file_on_huggingface, get_start_idx
 
 parser = argparse.ArgumentParser()
-parser.add_argument("--snapshot", "-s", type=str)
+parser.add_argument("--snapshot", "-s", type=str, default='2021-17')
 parser.add_argument("--pool", "-p", type=int, default=4)
 parser.add_argument("--repo_id", "-r", type=str, default="MediaTek-Research")
 args = parser.parse_args()
