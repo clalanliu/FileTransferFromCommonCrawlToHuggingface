@@ -15,7 +15,7 @@ def fetch_wet_s3(wet_path, save_path, log_filename="log"):
     command += f" > {log_filename}"
 
     os.system(command)
-    t_upperbound = 1800
+    t_upperbound = 30
     t = time.time()
     while not os.path.exists(save_path) and time.time() - t < t_upperbound:
         time.sleep(0.2)
