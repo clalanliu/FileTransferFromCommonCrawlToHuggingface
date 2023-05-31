@@ -3,7 +3,7 @@ import os
 import time
 
 
-@retry(wait_exponential_multipllier=250, wait_exponential_max=32000)
+@retry(wait_exponential_multiplier=250, wait_exponential_max=32000)
 def fetch_wet_s3(wet_path, save_path, log_filename="log"):
     aws = "aws $3"
     command = f"cp "
